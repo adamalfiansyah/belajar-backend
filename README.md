@@ -1,5 +1,4 @@
-# Device Detector
-Deteksi device user berdasarkan user agent
+# Belajar Backend - Wegodev
 
 ## Installation
 
