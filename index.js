@@ -3,13 +3,14 @@ import Mongoose from 'mongoose';
 import ArticleController from "./controllers/ArticleController.js";
 
 const APP_PORT  = 8080
-const DB_URL    = 'mongodb+srv://wegodev:eh43gr34t27t32e3r@belajar.nafl5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const DB_URL    = 'mongodb+srv://wegodev:eh43gr34t27t32e3r@belajar.nafl5.mongodb.net/wegodev?retryWrites=true&w=majority'
 const app = express()
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 //setting endpoint yang dapat di akses user
+app.get('/api/articles', ArticleController.index);
 app.post('/api/articles', ArticleController.store);
 
 //koneksi ke MongoDB server

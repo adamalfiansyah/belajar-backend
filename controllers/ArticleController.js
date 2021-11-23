@@ -1,5 +1,21 @@
 import Article from "../models/Article.js"
 
+const index = async (req, res) => {
+    try {        
+        const article = await Article.find({})
+
+        return res.status(200).json({
+            success : true,
+            article
+        })
+    } catch (error) {
+        return res.status(400).json({
+            success : false,
+            message : error
+        })
+    }
+}
+
 const store = async (req, res) => {
     try {
         const newArticle = new Article({
@@ -21,4 +37,4 @@ const store = async (req, res) => {
     }
 }
 
-export default { store }
+export default { index, store }
